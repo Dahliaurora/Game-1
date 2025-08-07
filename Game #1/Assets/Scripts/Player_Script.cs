@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player_Script
 {
+    private float _playerSpeed = 5f;
+
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -13,7 +15,7 @@ public class Player_Script
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         transform.Translate(direction*_playerSpeed*Time.deltaTime);
-        Vector3 direction = new Vector3(horizontalInpt, verticalinput, 0);
+        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.96f, 0), 0);
     }
 }
